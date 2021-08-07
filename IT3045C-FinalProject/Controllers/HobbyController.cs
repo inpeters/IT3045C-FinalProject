@@ -4,15 +4,15 @@ using System.Linq;
 using IT3045C_FinalProject.Data;
 using IT3045_FinalProject.Models;
 
-namespace FinalProject.Controllers
+namespace IT3045C_FinalProject.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class HobbiesController : ControllerBase
+    public class HobbyController : ControllerBase
     {
-        private readonly ILogger<HobbiesController> _logger;
+        private readonly ILogger<HobbyController> _logger;
         private readonly MemberInfo _ctx;
-        public HobbiesController(ILogger<HobbiesController> logger, MemberInfo ctx)
+        public HobbyController(ILogger<HobbyController> logger, MemberInfo ctx)
         {
             _logger = logger;
             _ctx = ctx;
@@ -49,7 +49,7 @@ namespace FinalProject.Controllers
             dbInfo.FullName = hobby.FullName;
             dbInfo.FavoriteHobby = hobby.FavoriteHobby;
             dbInfo.SecondFavoriteHobby = hobby.SecondFavoriteHobby;
-            dbInfo.WhyYouLikeThem = hobby.WhyYouLikeThem;
+            dbInfo.ThirdFavoriteHobby = hobby.ThirdFavoriteHobby;
             _ctx.Hobbies.Update(dbInfo);
             var changes = _ctx.SaveChanges();
 

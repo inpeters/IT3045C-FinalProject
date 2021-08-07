@@ -4,16 +4,16 @@ using System.Linq;
 using IT3045C_FinalProject.Models;
 using IT3045C_FinalProject.Data;
 
-namespace FinalProject.Controllers
+namespace IT3045C_FinalProject.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class MembersInfoController : ControllerBase
+    public class TeamMemberController : ControllerBase
     {
-        private readonly ILogger<MembersInfoController> _logger;
+        private readonly ILogger<TeamMemberController> _logger;
         private readonly MemberInfo _ctx;
 
-        public MembersInfoController(ILogger<MembersInfoController> logger, MemberInfo ctx)
+        public TeamMemberController(ILogger<TeamMemberController> logger, MemberInfo ctx)
         {
             _logger = logger;
             _ctx = ctx;
