@@ -24,12 +24,12 @@ namespace IT3045C_FinalProject.Controllers
               nameof(DefaultApiConventions.Get))]
         public IActionResult Get(int? id)
         {
-            //return Ok(_ctx.Info.ToList());
+            //return Ok(_ctx.Member.ToList());
 
             if (id == null || id < 1)
-                return Ok(_ctx.Info.Take(5).ToList());
+                return Ok(_ctx.Member.Take(5).ToList());
 
-            var member = _ctx.Info.Find(id);
+            var member = _ctx.Member.Find(id);
             if (member == null)
                 return NotFound();
 
@@ -44,7 +44,7 @@ namespace IT3045C_FinalProject.Controllers
             if (information.ID == null || information.ID < 1)
                 return BadRequest("Invalid member Id");
 
-            var dbInfo = _ctx.Info.Find(information.ID);
+            var dbInfo = _ctx.Member.Find(information.ID);
             if (dbInfo == null)
                 return NotFound();
 
@@ -52,7 +52,7 @@ namespace IT3045C_FinalProject.Controllers
             dbInfo.CollegeProgram = information.CollegeProgram;
             dbInfo.YearInProgram = information.YearInProgram;
             dbInfo.Birthdate = information.Birthdate;
-            _ctx.Info.Update(dbInfo);
+            _ctx.Member.Update(dbInfo);
             var changes = _ctx.SaveChanges();
 
             if (changes > 0)
@@ -72,7 +72,7 @@ namespace IT3045C_FinalProject.Controllers
                 return BadRequest("Must include a Full Name for the member.");
             }
             information.ID = null;
-            _ctx.Info.Add(information);
+            _ctx.Member.Add(information);
             var changes = _ctx.SaveChanges();
             if (changes > 0)
                 return NoContent();
@@ -88,15 +88,15 @@ namespace IT3045C_FinalProject.Controllers
             if (id == null || id < 1)
                 return BadRequest("Invalid member Id");
 
-            //var dbInfo = _ctx.Info.Find(information.ID);
+            //var dbInfo = _ctx.Member.Find(information.ID);
             //if (dbInfo == null)
             //return NotFound();
 
-            var member = _ctx.Info.Find(id);
+            var member = _ctx.Member.Find(id);
             if (member == null)
                 return NotFound();
 
-            _ctx.Info.Remove(member);
+            _ctx.Member.Remove(member);
             var changes = _ctx.SaveChanges();
             if (changes > 0)
                 return NoContent();
