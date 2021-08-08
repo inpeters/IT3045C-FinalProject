@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Linq;
 using IT3045C_FinalProject.Data;
-using IT3045_FinalProject.Models;
+using IT3045C_FinalProject.Models;
 
 namespace IT3045C_FinalProject.Controllers
 {
@@ -24,9 +24,9 @@ namespace IT3045C_FinalProject.Controllers
         public IActionResult Get(int? id)
         {
             if (id == null || id < 1)
-                return Ok(_ctx.Hobbies.Take(5).ToList());
+                return Ok(_ctx.Hobby.Take(5).ToList());
 
-            var member = _ctx.Hobbies.Find(id);
+            var member = _ctx.Hobby.Find(id);
             if (member == null)
                 return NotFound();
 
@@ -41,7 +41,7 @@ namespace IT3045C_FinalProject.Controllers
             if (hobby.Id == null || hobby.Id < 1)
                 return BadRequest("Invalid member Id");
 
-            var dbInfo = _ctx.Hobbies.Find(hobby.Id);
+            var dbInfo = _ctx.Hobby.Find(hobby.Id);
 
             if (dbInfo == null)
                 return NotFound();
@@ -50,7 +50,7 @@ namespace IT3045C_FinalProject.Controllers
             dbInfo.FavoriteHobby = hobby.FavoriteHobby;
             dbInfo.SecondFavoriteHobby = hobby.SecondFavoriteHobby;
             dbInfo.ThirdFavoriteHobby = hobby.ThirdFavoriteHobby;
-            _ctx.Hobbies.Update(dbInfo);
+            _ctx.Hobby.Update(dbInfo);
             var changes = _ctx.SaveChanges();
 
             if (changes > 0)
@@ -83,7 +83,7 @@ namespace IT3045C_FinalProject.Controllers
             }
 
             hobby.Id = null;
-            _ctx.Hobbies.Add(hobby);
+            _ctx.Hobby.Add(hobby);
             var changes = _ctx.SaveChanges();
             if (changes > 0)
                 return NoContent();
@@ -99,11 +99,11 @@ namespace IT3045C_FinalProject.Controllers
             if (id == null || id < 1)
                 return BadRequest("Invalid member Id");
 
-            var member = _ctx.Hobbies.Find(id);
+            var member = _ctx.Hobby.Find(id);
             if (member == null)
                 return NotFound();
 
-            _ctx.Hobbies.Remove(member);
+            _ctx.Hobby.Remove(member);
             var changes = _ctx.SaveChanges();
 
             if (changes > 0)
