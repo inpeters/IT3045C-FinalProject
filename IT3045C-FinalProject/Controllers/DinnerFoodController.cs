@@ -24,9 +24,9 @@ namespace IT3045C_FinalProject.Controllers
         public IActionResult Get(int? id)
         {
             if (id == null || id < 1)
-                return Ok(_ctx.Foods.Take(5).ToList());
+                return Ok(_ctx.Dinner.Take(5).ToList());
 
-            var member = _ctx.Foods.Find(id);
+            var member = _ctx.Dinner.Find(id);
             if (member == null)
                 return NotFound();
 
@@ -36,21 +36,21 @@ namespace IT3045C_FinalProject.Controllers
         [HttpPut]
         [ApiConventionMethod(typeof(DefaultApiConventions),
               nameof(DefaultApiConventions.Put))]
-        public IActionResult Put(Food food)
+        public IActionResult Put(Dinner dinner)
         {
-            if (food.Id == null || food.Id < 1)
+            if (dinner.Id == null || dinner.Id < 1)
                 return BadRequest("Invalid member Id");
 
-            var dbInfo = _ctx.Foods.Find(food.Id);
+            var dbInfo = _ctx.Dinner.Find(dinner.Id);
 
             if (dbInfo == null)
                 return NotFound();
 
-            dbInfo.FullName = food.FullName;
-            dbInfo.FavoriteFood = food.FavoriteFood;
-            dbInfo.SecondFavoriteFood = food.SecondFavoriteFood;
-            dbInfo.FavoriteMealTime = food.FavoriteMealTime;
-            _ctx.Foods.Update(dbInfo);
+            dbInfo.FullName = dinner.FullName;
+            dbInfo.FavoriteFood = dinner.FavoriteFood;
+            dbInfo.SecondFavoriteFood = dinner.SecondFavoriteFood;
+            dbInfo.FavoriteMealTime = dinner.FavoriteMealTime;
+            _ctx.Dinner.Update(dbInfo);
             var changes = _ctx.SaveChanges();
 
             if (changes > 0)
@@ -63,27 +63,27 @@ namespace IT3045C_FinalProject.Controllers
         [HttpPost]
         [ApiConventionMethod(typeof(DefaultApiConventions),
               nameof(DefaultApiConventions.Post))]
-        public IActionResult Post(Food food)
+        public IActionResult Post(Dinner dinner)
         {
-            if (string.IsNullOrEmpty(food.FullName))
+            if (string.IsNullOrEmpty(dinner.FullName))
             {
                 return BadRequest("Must include a Full Name for the member.");
             }
-            if (string.IsNullOrEmpty(food.FavoriteFood))
+            if (string.IsNullOrEmpty(dinner.FavoriteFood))
             {
                 return BadRequest("Must include a Favorite Dinner Food.");
             }
-            if (string.IsNullOrEmpty(food.SecondFavoriteFood))
+            if (string.IsNullOrEmpty(dinner.SecondFavoriteFood))
             {
                 return BadRequest("Must include a Second Favorite Dinner Food.");
             }
-            if (string.IsNullOrEmpty(food.FavoriteMealTime))
+            if (string.IsNullOrEmpty(dinner.FavoriteMealTime))
             {
-                return BadRequest("Must include Why Your Favorite Meal Time For Dinner.");
+                return BadRequest("Must include Your Favorite Meal Time For Dinner.");
             }
 
-            food.Id = null;
-            _ctx.Foods.Add(food);
+            dinner.Id = null;
+            _ctx.Dinner.Add(dinner);
             var changes = _ctx.SaveChanges();
             if (changes > 0)
                 return NoContent();
@@ -94,16 +94,16 @@ namespace IT3045C_FinalProject.Controllers
         [HttpDelete]
         [ApiConventionMethod(typeof(DefaultApiConventions),
               nameof(DefaultApiConventions.Delete))]
-        public IActionResult Delete(int? id, Food food)
+        public IActionResult Delete(int? id, Dinner dinner)
         {
             if (id == null || id < 1)
                 return BadRequest("Invalid member Id");
 
-            var member = _ctx.Foods.Find(id);
+            var member = _ctx.Dinner.Find(id);
             if (member == null)
                 return NotFound();
 
-            _ctx.Foods.Remove(member);
+            _ctx.Dinner.Remove(member);
             var changes = _ctx.SaveChanges();
 
             if (changes > 0)
