@@ -7,7 +7,7 @@ namespace IT3045C_FinalProject.Models
         public int? Id { get; set; }
         public string FullName { get; set; }
         public string FavoriteBreakfastFood { get; set; }
-        public string SecondFavoriteFood { get; set; }
+        public string FavoriteSide { get; set; }
         public string FavoriteBreakfastTime { get; set; }
 
     }

@@ -48,8 +48,8 @@ namespace IT3045C_FinalProject.Controllers
 
             dbInfo.FullName = hobby.FullName;
             dbInfo.FavoriteHobby = hobby.FavoriteHobby;
-            dbInfo.SecondFavoriteHobby = hobby.SecondFavoriteHobby;
-            dbInfo.ThirdFavoriteHobby = hobby.ThirdFavoriteHobby;
+            dbInfo.HowStarted = hobby.HowStarted;
+            dbInfo.WhyStarted = hobby.WhyStarted;
             _ctx.Hobby.Update(dbInfo);
             var changes = _ctx.SaveChanges();
 
@@ -73,13 +73,13 @@ namespace IT3045C_FinalProject.Controllers
             {
                 return BadRequest("Must include a Favorite Hobby.");
             }
-            if (string.IsNullOrEmpty(hobby.SecondFavoriteHobby))
+            if (string.IsNullOrEmpty(hobby.HowStarted))
             {
-                return BadRequest("Must include a Second Favorite Hobby.");
+                return BadRequest("Must include how you started this Hobby.");
             }
-            if (string.IsNullOrEmpty(hobby.ThirdFavoriteHobby))
+            if (string.IsNullOrEmpty(hobby.WhyStarted))
             {
-                return BadRequest("Must include a Third Favorite Hobby.");
+                return BadRequest("Must include a why you started this Hobby.");
             }
 
             hobby.Id = null;

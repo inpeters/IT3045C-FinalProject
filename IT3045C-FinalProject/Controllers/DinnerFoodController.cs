@@ -47,9 +47,9 @@ namespace IT3045C_FinalProject.Controllers
                 return NotFound();
 
             dbInfo.FullName = dinner.FullName;
-            dbInfo.FavoriteDinnerFood = dinner.FavoriteDinnerFood;
-            dbInfo.SecondFavoriteFood = dinner.SecondFavoriteFood;
-            dbInfo.FavoriteDinnerTime = dinner.FavoriteDinnerTime;
+            dbInfo.FavoriteEntree = dinner.FavoriteEntree;
+            dbInfo.FavoriteSide = dinner.FavoriteSide;
+            dbInfo.FavoriteRestaraunt = dinner.FavoriteRestaraunt;
             _ctx.Dinner.Update(dbInfo);
             var changes = _ctx.SaveChanges();
 
@@ -69,17 +69,17 @@ namespace IT3045C_FinalProject.Controllers
             {
                 return BadRequest("Must include a Full Name for the member.");
             }
-            if (string.IsNullOrEmpty(dinner.FavoriteDinnerFood))
+            if (string.IsNullOrEmpty(dinner.FavoriteEntree))
             {
-                return BadRequest("Must include a Favorite Dinner Food.");
+                return BadRequest("Must include a Favorite Dinner Entree.");
             }
-            if (string.IsNullOrEmpty(dinner.SecondFavoriteFood))
+            if (string.IsNullOrEmpty(dinner.FavoriteSide))
             {
-                return BadRequest("Must include a Second Favorite Dinner Food.");
+                return BadRequest("Must include a Favorite Dinner Side.");
             }
-            if (string.IsNullOrEmpty(dinner.FavoriteDinnerTime))
+            if (string.IsNullOrEmpty(dinner.FavoriteRestaraunt))
             {
-                return BadRequest("Must include Your Favorite Meal Time For Dinner.");
+                return BadRequest("Must include Your Favorite Restaraunt for Dinner.");
             }
 
             dinner.Id = null;
