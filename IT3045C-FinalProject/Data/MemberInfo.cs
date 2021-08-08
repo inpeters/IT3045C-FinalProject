@@ -46,16 +46,20 @@ namespace IT3045C_FinalProject.Data
                 },
              new Member
                 {
-
-                },
+                 ID = 4,
+                 FullName = "Tony Herrera",
+                 CollegeProgram = "Information Technology",
+                 YearInProgram = "Fourth Year",
+                 Birthdate = new DateTime(1999, 09, 22)
+             },
             new Member
                 {
-
-                },
-            new Member
-                {
-                  
-                }
+                ID = 5,
+                FullName = "Taylor O'Black",
+                CollegeProgram = "Information Technology",
+                YearInProgram = "Third Year",
+                Birthdate = new DateTime(2000, 07, 03)
+            }
             );
             builder.Entity<Hobby>().HasData(
             new Hobby
@@ -68,7 +72,7 @@ namespace IT3045C_FinalProject.Data
             },
             new Hobby
             {
-                ID = 2,
+                Id = 2,
                 FullName = "Logan Nemec",
                 FavoriteHobby = "Playing Video Games",
                 HowStarted = "Family and Friends",
@@ -76,7 +80,7 @@ namespace IT3045C_FinalProject.Data
             },
             new Hobby
             {
-                ID = 3,
+                Id = 3,
                 FullName = "Joseph Berger",
                 FavoriteHobby = "Extreme Deep Sea Diving",
                 HowStarted = "Became best friends with a local fisherman",
@@ -84,17 +88,20 @@ namespace IT3045C_FinalProject.Data
             },
             new Hobby
                 {
-                  
-                },
+                Id = 4,
+                FullName = "Tony Herrera",
+                FavoriteHobby = "Video Games",
+                HowStarted = "My brother made fun of me for being bad at them",
+                WhyStarted = "To beat my brother for bragging rights"
+            },
             new Hobby
                 {
-                   
-
-                },
-            new Hobby
-                {
-                
-                }
+                Id = 5,
+                FullName = "Taylor O'Black",
+                FavoriteHobby = "Raising a Puppy",
+                HowStarted = "Got a Shiba Inu with my partner",
+                WhyStarted = "I love puppies"
+            }
             );
             builder.Entity<Breakfast>().HasData(
             new Breakfast
@@ -107,7 +114,7 @@ namespace IT3045C_FinalProject.Data
             },
             new Breakfast
             {
-                ID = 2,
+                Id = 2,
                 FullName = "Logan Nemec",
                 FavoriteBreakfastFood = "Waffles",
                 FavoriteSide = "Bacon",
@@ -115,7 +122,7 @@ namespace IT3045C_FinalProject.Data
             },
             new Breakfast
             {
-                ID = 3,
+                Id = 3,
                 FullName = "Joseph Berger",
                 FavoriteBreakfastFood = "French Toast",
                 FavoriteSide = "Coffee",
@@ -123,17 +130,20 @@ namespace IT3045C_FinalProject.Data
             },
             new Breakfast
                 {
-                    
-                },
+                Id = 4,
+                FullName = "Tony Herrera",
+                FavoriteBreakfastFood = "Bacon Egg & Cheese Biscuit",
+                FavoriteSide = "Toast",
+                FavoriteBreakfastTime = "8:00 AM"
+            },
             new Breakfast
                 {
-                    
-
-                },
-            new Breakfast
-                {
-                    
-                }
+                Id = 5,
+                FullName = "Taylor O'Black",
+                FavoriteBreakfastFood = "Egg Sandwich",
+                FavoriteSide = "Coffee",
+                FavoriteBreakfastTime = "7:30 AM"
+            }
             );
             builder.Entity<Dinner>().HasData(
             new Dinner
@@ -146,32 +156,36 @@ namespace IT3045C_FinalProject.Data
             },
             new Dinner
             {
-                ID = 2,
+                Id = 2,
                 FullName = "Logan Nemec",
                 FavoriteEntree = "Steak",
                 FavoriteSide = "Fried rice and noodles",
-                FavoriteRestaraunt = "Swensons"
+                FavoriteRestaurant = "Swensons"
             },
             new Dinner
             {
-                ID = 3,
+                Id = 3,
                 FullName = "Joseph Berger",
                 FavoriteEntree = "Pizza",
                 FavoriteSide = "Fries",
-                FavoriteRestaraunt = "Dewey's"
+                FavoriteRestaurant = "Dewey's"
             },
             new Dinner
                 {
-                
-                },
+                Id = 4,
+                FullName = "Tony Herrera",
+                FavoriteEntree = "Cheeseburger",
+                FavoriteSide = "Fries",
+                FavoriteRestaurant = "Culver's"
+            },
             new Dinner
                 {
-                
-                },
-            new Dinner
-                {
-                
-                }           
+                Id = 5,
+                FullName = "Taylor O'Black",
+                FavoriteEntree = "Shephards Pie",
+                FavoriteSide = "Roasted Potatoes",
+                FavoriteRestaurant = "CheeseCake Factory"
+            }         
           );
         }
     }
