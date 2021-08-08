@@ -21,9 +21,13 @@ namespace IT3045C_FinalProject.Data
         {
             builder.Entity<Member>().HasData(
             new Member
-                {
-                  
-                },
+            {
+                ID = 1,
+                FullName = "Isabella Peters",
+                CollegeProgram = "Information Technology",
+                YearInProgram = "Junior",
+                Birthdate = new DateTime(2001, 09, 17)
+            },
             new Member
                 {
                   
@@ -32,13 +36,13 @@ namespace IT3045C_FinalProject.Data
                 {
                   
                 },
-            new Member
+             new Member
                 {
-                  
+
                 },
             new Member
                 {
-                  
+
                 },
             new Member
                 {
@@ -47,9 +51,13 @@ namespace IT3045C_FinalProject.Data
             );
             builder.Entity<Hobby>().HasData(
             new Hobby
-                {
-                  
-                },
+            {
+                Id = 1,
+                FullName = "Isabella Peters",
+                FavoriteHobby = "Hiking",
+                HowStarted = "My family would take me.",
+                WhyStarted = "To exercise"
+            },
             new Hobby
                 {
                   
@@ -74,9 +82,13 @@ namespace IT3045C_FinalProject.Data
             );
             builder.Entity<Breakfast>().HasData(
             new Breakfast
-                {
-                
-                },
+            {
+                Id = 1,
+                FullName = "Isabella Peters",
+                FavoriteBreakfastFood = "Waffles",
+                FavoriteSide = "Bacon",
+                FavoriteBreakfastTime = "10:00 AM"
+            },
             new Breakfast
                 {
                     
@@ -101,9 +113,13 @@ namespace IT3045C_FinalProject.Data
             );
             builder.Entity<Dinner>().HasData(
             new Dinner
-                {
-                  
-                },
+             {
+                Id = 1,
+                FullName = "Isabella Peters",
+                FavoriteEntre = "Steak",
+                FavoriteSide = "Mashed Potatoes",
+                FavoriteRestaurant = "Alladins' Eatery"
+            },
             new Dinner
                 {
                 
