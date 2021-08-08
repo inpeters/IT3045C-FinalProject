@@ -1,6 +1,6 @@
 using System;
 
-namespace IT3045_FinalProject.Models
+namespace IT3045C_FinalProject.Models
 {
     public class Dinner
 {
