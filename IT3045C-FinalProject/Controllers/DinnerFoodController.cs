@@ -49,7 +49,7 @@ namespace IT3045C_FinalProject.Controllers
             dbInfo.FullName = dinner.FullName;
             dbInfo.FavoriteEntree = dinner.FavoriteEntree;
             dbInfo.FavoriteSide = dinner.FavoriteSide;
-            dbInfo.FavoriteRestaraunt = dinner.FavoriteRestaraunt;
+            dbInfo.FavoriteRestaurant = dinner.FavoriteRestaurant;
             _ctx.Dinner.Update(dbInfo);
             var changes = _ctx.SaveChanges();
 
@@ -77,9 +77,9 @@ namespace IT3045C_FinalProject.Controllers
             {
                 return BadRequest("Must include a Favorite Dinner Side.");
             }
-            if (string.IsNullOrEmpty(dinner.FavoriteRestaraunt))
+            if (string.IsNullOrEmpty(dinner.FavoriteRestaurant))
             {
-                return BadRequest("Must include Your Favorite Restaraunt for Dinner.");
+                return BadRequest("Must include Your Favorite Restauraunt for Dinner.");
             }
 
             dinner.Id = null;

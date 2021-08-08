@@ -116,7 +116,7 @@ namespace IT3045C_FinalProject.Data
              {
                 Id = 1,
                 FullName = "Isabella Peters",
-                FavoriteEntre = "Steak",
+                FavoriteEntree = "Steak",
                 FavoriteSide = "Mashed Potatoes",
                 FavoriteRestaurant = "Alladins' Eatery"
             },
