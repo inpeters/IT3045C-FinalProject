@@ -30,11 +30,19 @@ namespace IT3045C_FinalProject.Data
             },
             new Member
                 {
-                  
+                  ID = 2,
+                  FullName = "Logan Nemec",
+                  CollegeProgram = "Information Technology",
+                  YearInProgram = "First Year",
+                  Birthdate = new DateTime(2000, 03, 10)
                 },
             new Member
                 {
-                  
+                  ID = 3, 
+                  FullName = "Joseph Berger",
+                  CollegeProgram = "Information Technology",
+                  YearInProgram = "Third Year",
+                  Birthdate = new DateTime(2000, 03, 17)
                 },
              new Member
                 {
@@ -59,13 +67,21 @@ namespace IT3045C_FinalProject.Data
                 WhyStarted = "To exercise"
             },
             new Hobby
-                {
-                  
-                },
+            {
+                ID = 2,
+                FullName = "Logan Nemec",
+                FavoriteHobby = "Playing Video Games",
+                HowStarted = "Family and Friends",
+                WhyStarted = "For fun and good stress relief"
+            },
             new Hobby
-                {
-                  
-                },
+            {
+                ID = 3,
+                FullName = "Joseph Berger",
+                FavoriteHobby = "Extreme Deep Sea Diving",
+                HowStarted = "Became best friends with a local fisherman",
+                WhyStarted = "To gaze upon the amazing underwater sea"
+            },
             new Hobby
                 {
                   
@@ -90,13 +106,21 @@ namespace IT3045C_FinalProject.Data
                 FavoriteBreakfastTime = "10:00 AM"
             },
             new Breakfast
-                {
-                    
-                },
+            {
+                ID = 2,
+                FullName = "Logan Nemec",
+                FavoriteBreakfastFood = "Waffles",
+                FavoriteSide = "Bacon",
+                FavoriteBreakfastTime = "12:00 PM"
+            },
             new Breakfast
-                {
-                    
-                },
+            {
+                ID = 3,
+                FullName = "Joseph Berger",
+                FavoriteBreakfastFood = "French Toast",
+                FavoriteSide = "Coffee",
+                FavoriteBreakfastTime = "6:00 AM"
+            },
             new Breakfast
                 {
                     
@@ -121,13 +145,21 @@ namespace IT3045C_FinalProject.Data
                 FavoriteRestaurant = "Alladins' Eatery"
             },
             new Dinner
-                {
-                
-                },
+            {
+                ID = 2,
+                FullName = "Logan Nemec",
+                FavoriteEntree = "Steak",
+                FavoriteSide = "Fried rice and noodles",
+                FavoriteRestaraunt = "Swensons"
+            },
             new Dinner
-                {
-                
-                },
+            {
+                ID = 3,
+                FullName = "Joseph Berger",
+                FavoriteEntree = "Pizza",
+                FavoriteSide = "Fries",
+                FavoriteRestaraunt = "Dewey's"
+            },
             new Dinner
                 {
                 
