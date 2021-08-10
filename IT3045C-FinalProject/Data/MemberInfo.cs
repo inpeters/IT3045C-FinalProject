@@ -59,6 +59,14 @@ namespace IT3045C_FinalProject.Data
                 CollegeProgram = "Information Technology",
                 YearInProgram = "Third Year",
                 Birthdate = new DateTime(2000, 07, 03)
+            },
+            new Member
+            {
+                ID = 6,
+                FullName = "Bhakti Pokhrel",
+                CollegeProgram = "Information Technology",
+                YearInProgram = "Third Year",
+                Birthdate = new DateTime(1997, 04, 27)
             }
             );
             builder.Entity<Hobby>().HasData(
@@ -101,6 +109,15 @@ namespace IT3045C_FinalProject.Data
                 FavoriteHobby = "Raising a Puppy",
                 HowStarted = "Got a Shiba Inu with my partner",
                 WhyStarted = "I love puppies"
+            },
+            new Hobby
+            {
+                Id = 6,
+                FullName = "Bhakti Pokhrel",
+                FavoriteHobby = "Building Gaming PC",
+                HowStarted = "Opening my own computer",
+                WhyStarted = "Curiosity"
+
             }
             );
             builder.Entity<Breakfast>().HasData(
@@ -143,6 +160,14 @@ namespace IT3045C_FinalProject.Data
                 FavoriteBreakfastFood = "Egg Sandwich",
                 FavoriteSide = "Coffee",
                 FavoriteBreakfastTime = "7:30 AM"
+            },
+            new Breakfast
+            {
+                Id = 6,
+                FullName = "Bhakti Pokhrel",
+                FavoriteBreakfastFood = "Cereal",
+                FavoriteSide = "Coffee",
+                FavoriteBreakfastTime = "9:00 AM"
             }
             );
             builder.Entity<Dinner>().HasData(
@@ -185,7 +210,15 @@ namespace IT3045C_FinalProject.Data
                 FavoriteEntree = "Shephards Pie",
                 FavoriteSide = "Roasted Potatoes",
                 FavoriteRestaurant = "CheeseCake Factory"
-            }         
+            },
+            new Dinner
+            {
+                Id = 6,
+                FullName = "Bhakti Pokhrel",
+                FavoriteEntree = "Chicken Biryani",
+                FavoriteSide = "Naan",
+                FavoriteRestaurant = "Intra-National"
+            }
           );
         }
     }
